@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Navbar() {
 
-  const navLink = useRef(null);
+  const navLink = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
 
@@ -76,6 +76,8 @@ function Navbar() {
   // navlinks style
 
   useEffect(() => {
+    if (!navLink.current) return;
+    
     gsap.fromTo(
       navLink.current.children,
       {
