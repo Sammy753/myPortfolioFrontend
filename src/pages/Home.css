@@ -1,0 +1,33 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+}
+
+.homeContentContainer{
+    margin: 0px;
+    padding: 4rem 8rem;
+    position: relative;
+    z-index: 10;
+}
+
+.XylophoneContainer{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 5;
+}
+.backgroundBlur{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(223, 233, 255, 0.1);
+    position: absolute;
+}

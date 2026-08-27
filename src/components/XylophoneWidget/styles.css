@@ -1,0 +1,62 @@
+.xw-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.xw-sound-toggle {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font:
+    12px/1 system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.xw-sound-toggle:hover {
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.xw-sound-toggle__icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  opacity: 0.85;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.xw-sound-toggle__icon path:first-child {
+  fill: currentColor;
+  stroke-linejoin: round;
+}
+
+.xw-sound-toggle__slash {
+  display: none;
+}
+
+.xw-sound-toggle.is-muted .xw-sound-toggle__wave {
+  display: none;
+}
+
+.xw-sound-toggle.is-muted .xw-sound-toggle__slash {
+  display: block;
+}

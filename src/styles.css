@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* Your global styles */
+
+/* html {
+  box-sizing: border-box;
+} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background:
+    linear-gradient(
+      105deg,
+      rgba(99, 102, 241, 0.6),
+      rgba(168, 85, 247, 0.6),
+      rgba(34, 211, 238, 0.6)
+    ),
+    rgb(223, 233, 255);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.PageContainer{
+  position: relative;
+  z-index: 1;
+}

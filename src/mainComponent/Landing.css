@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.Landing{
+  width: 100vmax;
+  height: 100vh;
+  position: relative;
+}
+
+
+.AllArk{
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arc{
+    top: 13%;
+    width: 75%;
+    height: 80vh;
+    position: absolute;
+    filter: blur(4px);
+    z-index: 1;
+    background-color: rgba(0, 0, 255, 0);
+    border-radius: 700px 700px 0% 0%;
+}
+
+.arc::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: var(--arc-padding, 10px);
+    background: linear-gradient(180deg, #6366F1, rgba(57, 58, 139, 0));
+    /* filter: blur(4px); */
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.arc::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    /* padding: 10px; */
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -webkit-mask: linear-gradient(180deg, transparent 0%, black 100%);
+    mask: linear-gradient(90deg, transparent 0%, black 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.arc2{
+    top: 13%;
+    width: 75%;
+    height: 80vh;
+    position: absolute;
+    filter: blur(0.5px);
+    backdrop-filter: blur(3px);
+    z-index: 2;
+    background-color: rgba(0, 0, 255, 0);
+    border-radius: 700px 700px 0% 0%;
+}
+
+.arc2::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: var(--arc-padding, 12px);
+    background: linear-gradient(180deg, #6366F1, rgba(57, 58, 139, 0.2), rgba(57, 58, 139, 0));
+    /* filter: blur(4px); */
+    -webkit-mask:
+        linear-gradient(#ffffff 0 0) content-box,
+        linear-gradient(#ffffff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.arc2::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    /* padding: 10px; */
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -webkit-mask: linear-gradient(180deg, transparent 0%, black 100%);
+    mask: linear-gradient(90deg, transparent 0%, black 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+.landingContent{
+    position: absolute;
+    width: 51%;
+    /* height: 2; */
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    z-index: 7;
+    right: 24.5%;
+    bottom: 12%;
+}
+
+.LC{
+    /* padding: 2rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.LC h1{
+    font-size: 64px;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+}
+
+.LC p{
+    font-family: "Monda", sans-serif;
+}
