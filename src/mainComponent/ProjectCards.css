@@ -1,0 +1,90 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.ProductCards{
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0px;
+    padding: 5rem 7rem;
+    position: relative;
+    z-index: 11;
+    gap: 2rem;
+}
+
+.cardsContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.cardsTitle{
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.cardsTitle h2{
+    color: #111827;
+    font-family: 'Montserrat' sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background: rgba(17, 24, 39, 0.5);
+  margin: 0;
+}
+
+.ProductCard{
+    background: linear-gradient(
+      105deg,
+      rgba(99, 102, 241, 0.3),
+      rgba(168, 85, 247, 0.3),
+      rgba(34, 211, 238, 0.3)
+    ),
+    #111827;
+    width: 24%;
+    height: 350px;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.videos{
+    background-color: rgb(221, 221, 221);
+    border-radius: 10px;
+    width: 100%;
+    height: 70%;
+    position: relative;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.ProductCards button{
+    color: #860000;
+    border: 1px solid #860000;
+    border-radius: 5px;
+    width: 126px;
+    padding: 0.1rem 0rem;
+    font-family: 'Montserrat' sans-serif;
+    font-size: 12px;
+    margin-top: 2rem;
+    transition: 0.3s ease-in-out;
+}
+
+.ProductCards button:hover{
+    color: #600101;
+    border: 1px solid #600101;
+    background-color: rgba(96, 1, 1, 0.1);
+}

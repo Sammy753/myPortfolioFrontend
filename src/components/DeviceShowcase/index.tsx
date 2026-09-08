@@ -59,8 +59,8 @@ export default function DeviceShowcase({
   showMobile = true,
   interactive = true,
   hoverRadius = 0.6,
-  maxTiltY = 0.6,
-  maxTiltX = 0.9,
+  maxTiltY = 0.9,
+  maxTiltX = 0.5,
   easeSpeed = 0.09,
   bodyColor = '#788d96',
   background = 'transparent'

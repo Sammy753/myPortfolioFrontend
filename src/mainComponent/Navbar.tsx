@@ -35,7 +35,7 @@ function Navbar() {
         filter: "blur(0px)",
         border: "1px solid rgba(223, 233, 255, 0.6)",
         scrollTrigger: {
-          trigger: ".heroSection",
+          // trigger: ".heroSection",
           start: "top 0%",
           toggleActions: "play none none reverse",
         },
@@ -63,7 +63,7 @@ function Navbar() {
         duration: 1,
         position: "relative",
         scrollTrigger: {
-          trigger: ".heroSection",
+          // trigger: ".heroSection",
           start: "top 0%",
           toggleActions: "play none none reverse",
         },
@@ -92,7 +92,7 @@ function Navbar() {
         stagger: 0.1,
         ease: "power3.inout",
         scrollTrigger: {
-          trigger: ".heroSection",
+          // trigger: ".heroSection",
           start: "top 0%",
           toggleActions: "play none none reverse",
         },
@@ -106,7 +106,7 @@ function Navbar() {
     <div className='Navbar'>
       <nav className='navbar relative flex justify-between gap-6 items-center' >
         
-        <Link to="/" className='LogoContainer flex items-center justify-center gap-1'>
+        <Link to="/" className='LogoContainer flex items-start justify-center gap-1'>
           <div className='LogoNav'>
             {/* <img src="" alt="Logo" className='logo' /> */}
             <img src="/white Logo copy.png" alt="Logo" className='logo' />

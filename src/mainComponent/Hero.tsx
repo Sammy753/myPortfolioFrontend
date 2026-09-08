@@ -10,10 +10,10 @@ function Hero() {
   const [isTrue3, setIsTrue3] = useState(false);
 
   interface WhatIDo {
-  id: number;
-  title: string;
-  description: string;
-}
+    id: number;
+    title: string;
+    description: string;
+  }
 
 const [whatIdo, setWhatIdo] = useState<WhatIDo[]>([]);
 
@@ -25,19 +25,20 @@ useEffect(() => {
 
   return (
 
-    <div className="hero">
+    <div className="hero" id='hero'>
       <div className="content">
         <h1 className="name text-[50px] text-white">OLADELE SAMUEL</h1>
         <div className="titles">
-          <h2 className='text-white text-[32px]'>I’m a Software Engineer</h2>
-            <div className=''>
-              <h2>:</h2>
+          <h2 className='h2 text-white text-[32px]'>I’m a Software Engineer</h2>
+            <div className='tc'>
+              <h2 className='tC'>:</h2>
 
-              {whatIdo.map((p) => (
+              {whatIdo.map((p, index) => (
                 <div key={p.id}>
                   <span
                     className="title"
-                    style={{ "--i": p.id } as React.CSSProperties}
+                    style={{ "--i": index } as React.CSSProperties}
+                    data-text={p.title}
                   >
                     {p.title}
                   </span>

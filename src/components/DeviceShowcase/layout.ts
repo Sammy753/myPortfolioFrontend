@@ -18,10 +18,10 @@ export const LAYOUTS: Record<DeviceLayoutKey, DeviceLayout> = {
   // tablet + mobile beside each other in front of the laptop. Minimal rotation on every
   // device — they face the camera dead-on; only depth (z) and scale separate them.
   layered: {
-    desktop: { position: [0, -1.15, -1.9], rotation: [0, 0, 0], scale: 1.55 },
-    laptop: { position: [0.55, -1.05, -0.55], rotation: [0, 0, 0], scale: 1.4 },
-    tablet: { position: [-0.95, -0.4, 0.55], rotation: [0, 0, 0], scale: 1.25 },
-    mobile: { position: [-0.5, -0.65, 0.65], rotation: [0, 0, 0], scale: 1.3 }
+    desktop: { position: [0, 0.22, -1.9], rotation: [0, 0, 0], scale: 1.05 },
+    laptop: { position: [0.27, -0.05, -0.55], rotation: [0, 0, 0], scale: 0.99 },
+    tablet: { position: [-0.72, 0.39, 0.55], rotation: [0, 0, 0], scale: 0.75 },
+    mobile: { position: [-0.3, 0.3, 0.65], rotation: [0, 0, 0], scale: 0.78 }
   },
   // All four side-by-side at a similar scale.
   row: {

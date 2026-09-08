@@ -190,7 +190,7 @@ function Landing() {
   // }, []);
 
   return (
-    <div className='Landing'>
+    <div className='Landing' id='landing'>
       <div className="AllArk">
         <div className="arc"></div>
         <div className="arc2"></div>
