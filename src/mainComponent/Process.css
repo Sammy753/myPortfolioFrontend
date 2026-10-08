@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ProcessOverview{
+    padding: 0rem 9rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.ProcessOverview .contentP{
+    width: 45%;
+    position: relative;
+    z-index: 10;
+}
+
+.ProcessOverview .contentP h2 {
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: 700;
+    color: #111827;
+    text-align: left;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.ProcessOverview .contentP p{
+    font-size: clamp(12px, 2vw, 16px);
+    font-weight: 400;
+    color: black;
+    text-align: justify;
+    margin: 0;
+    padding: 0;
+    line-height: 2rem;
+    padding-bottom: 10px;
+}
+
+.ProcessOverview .componentCont{
+    width: 50%;
+    height: auto;
+    position: relative;
+}
+
+/* .contentImage .contentImagE{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+} */
+
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .ProcessOverview{
+        padding: 0rem 2rem;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .ProcessOverview .componentCont{
+        width: 100%;
+        height: auto;
+        border-radius: 18px;
+    }
+
+    video{
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .ProcessOverview .contentP{
+        width: 100%;
+    }
+}

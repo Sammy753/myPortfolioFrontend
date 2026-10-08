@@ -27,24 +27,24 @@ useEffect(() => {
 
     <div className="hero" id='hero'>
       <div className="content">
-        <h1 className="name text-[50px] text-white">OLADELE SAMUEL</h1>
+        <h1 className="name text-white">OLADELE SAMUEL</h1>
         <div className="titles">
-          <h2 className='h2 text-white text-[32px]'>I’m a Software Engineer</h2>
-            <div className='tc'>
-              <h2 className='tC'>:</h2>
+          <h2 className='h2 text-white'>I’m a Software Engineer</h2>
+          <div className='tc'>
+            <h2 className='tC'>:</h2>
 
-              {whatIdo.map((p, index) => (
-                <div key={p.id}>
-                  <span
-                    className="title"
-                    style={{ "--i": index } as React.CSSProperties}
-                    data-text={p.title}
-                  >
-                    {p.title}
-                  </span>
-                </div>
-              ))}
-            </div>
+            {whatIdo.map((p, index) => (
+              <div key={p.id}>
+                <span
+                  className="title"
+                  style={{ "--i": index } as React.CSSProperties}
+                  data-text={p.title}
+                >
+                  {p.title}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
         <p>
           I create sophisticated digital experiences that seamlessly blend design, functionality, and strategy. Every project I touch is crafted with precision, clarity, and a focus on impactful, user-centered results.

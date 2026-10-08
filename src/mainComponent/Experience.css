@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Experience{
+    padding: 0rem 9rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    position: relative;
+    z-index: 10;
+}
+
+.ExperienceContent{
+    width: 54%;
+}
+
+.ExperienceContent h2 {
+    font-size: clamp(20px, 3vw, 32px);
+    font-weight: 700;
+    color: #111827;
+    text-align: right;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.ExperienceContent p{
+    font-size: clamp(12px, 1.5vw, 16px);
+    font-weight: 400;
+    color: black;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    line-height: 2rem;
+    padding-bottom: 10px;
+}
+
+.Experience .componentCont{
+    width: 400px;
+    height: 500px;
+    position: relative;
+}
+
+/* .contentImage .contentImagE{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+} */
+
+@media screen and (max-width: 768px) {
+    
+    .Experience{
+        padding: 1rem 2rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .ExperienceContent{
+        width: 100%;
+        padding: 0rem;
+    }
+
+    .ExperienceContent h2 {
+        text-align: center;
+    }
+
+    .ExperienceContent p{
+        text-align: justify;
+    }
+
+    .Experience .componentCont{
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    
+    .Experience{
+        padding: 3rem 4rem;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    .ExperienceContent{
+        width: 50%;
+        padding: 0rem;
+    }
+
+    .Experience .componentCont{
+        width: 300px;
+        height: 400px;
+    }
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1300px) {
+    .Experience{
+        padding: 3rem 5rem;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+}

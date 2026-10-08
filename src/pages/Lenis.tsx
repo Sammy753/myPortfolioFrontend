@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 function SmoothScroll() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.82,
+      duration: 1.5,
       smoothWheel: true,
     });
 

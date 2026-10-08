@@ -22,7 +22,7 @@ body{
 .Navbar{
   padding: 0.5rem 3%;
   position: fixed;
-  z-index: 111111;
+  z-index: 15;
   top: 0%;
   width: 100%;
 }
@@ -131,26 +131,210 @@ body{
   letter-spacing: 0.05rem;
 }
 
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 6px;
+.navbarMobile {
+  display: none;
 }
 
-.hamburger span {
-  background-color: white;
-  transition: all 0.3s ease-in-out;
+.navlinksMobile{
+  display: none;
 }
 
-.hamburger .line1 {
-  width: 22px;
-  height: 2px;
-  border-radius: 5px;
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+
+  .navbarMobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 30px;
+    margin: 0.5rem 0rem;
+    z-index: 111;
+  }
+
+  
+  .hidden{
+    display: none;
+    opacity: 0;
+  }
+
+  .hiddenNav {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .navlinksMobile a {
+    color: #DFE9FF;
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 0.1rem 0.5rem;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .navlinksMobile {
+    display: flex;
+    width: 100dvw;
+    height: 100dvh;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* padding: 1rem 0; */
+    z-index: 111;
+    backdrop-filter: blur(10px);
+  }
+
+  .hamburgerClose {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: Close 5s ease-in-out infinite;
+  }
+
+  @keyframes Close {
+    0% {
+      filter: drop-shadow(0px 0px 0px rgba(223, 233, 255, 0.0));
+      border: 1px solid rgba(223, 233, 255, 0.0);
+    }
+    50% {
+      filter: drop-shadow(0px 0px 5px rgba(223, 233, 255, 0.2));
+      border: 1px solid rgba(223, 233, 255, 0.2);
+    }
+    100% {
+      filter: drop-shadow(0px 0px 0px rgba(223, 233, 255, 0.0));
+      border: 1px solid rgba(223, 233, 255, 0.0);
+    }
+  }
+
+  .hamburgerClose img {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    /* animation: none; */
+  }
+
+  .navlinksMobile a{
+    transition: 0.5s ease-in-out;
+  }
+
+  .navlinksMobile a:hover{
+    position: relative;
+    color: white;
+
+    background: linear-gradient(
+      105deg,
+      rgba(99, 102, 241, 1),
+      rgba(168, 85, 247, 1),
+      rgba(34, 211, 238, 1)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .navlinksMobile .active {
+    position: relative;
+    color: transparent;
+
+    background: linear-gradient(
+      105deg,
+      rgba(99, 102, 241, 1),
+      rgba(168, 85, 247, 1),
+      rgba(34, 211, 238, 1)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Gradient border */
+  .navlinksMobile .active::before {
+    content: "";
+    position: absolute;
+    inset: -5px -6rem;
+    padding: 1px;
+
+    border-radius: inherit;
+
+    background: linear-gradient(
+      105deg,
+      rgba(99, 102, 241, 0.6),
+      rgba(168, 85, 247, 0.6),
+      rgba(34, 211, 238, 0.6)
+    );
+
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events: none;
+  }
+
+  .logo {
+    width: 30px;
+    filter: drop-shadow(0px 0px 5px rgb(255, 150, 0, 0.15));
+  }
+  .line{
+    height: 16px;
+    width: 2px;
+    border: 13px;
+    background-color: white;
+  }
+  .LogoText{
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Agile', sans-serif;
+    letter-spacing: 0.05rem;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+  }
+
+  .hamburger div {
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hamburger img {
+    width: 20px;
+  }
 }
 
-.hamburger .line2 {
-  width: 15px;
-  height: 2px;
-  border-radius: 5px;
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+  .hamburgerClose{
+    top: 50px;
+    right: 50px;
+  }
+  .navlinksMobile .active::before {
+    inset: -5px -10rem;
+    border-radius: 8px;
+  }  
 }

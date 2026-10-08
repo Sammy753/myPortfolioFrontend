@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from '../mainComponent/Navbar';
+import ContactLanding from '../mainComponent/ContactLanding';
 
 function Contact() {
   return (
     <div>
-        <Navbar />
-        <h1>Contact Me</h1>
-        <p>Feel free to reach out!</p>
+        <Navbar isHome={false} />
+        <ContactLanding />
     </div>
   )
 }

@@ -1,4 +1,5 @@
 /* CSS @import version */
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Agile:wght@400;500;700&display=swap');
 
 *{
@@ -33,6 +34,7 @@
   display: flex;
   justify-content: space-between;
   align-items: start;
+  flex-wrap: wrap;
   width: 100%;
   gap: 2rem;
   padding: 2rem 0rem;
@@ -64,6 +66,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer_section img{
@@ -193,4 +196,60 @@
 .footer__bottom {
   padding-bottom: 2rem;
   font-size: 12px;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 700px) {
+
+  .footer{
+    padding: 0rem 3rem;
+  }
+
+  .footer__section {
+    font-size: 10px;
+  }
+
+  .footer__section h2 {
+    font-size: 12px;
+  }
+
+  .footer__section Link{
+    font-size: 10px;
+  }
+
+  .footer_section img{
+    width: 40px;
+  }
+
+  .FooterLogo{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 0.5rem;
+  }
+
+  .FooterLogo h2{
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Agile', sans-serif;
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0px;
+  }
+
+  .footer__bottom{
+    font-size: 10px;
+  }
+  .footer hr{
+    height: 1px;
+  }
 }

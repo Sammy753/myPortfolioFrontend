@@ -2,29 +2,29 @@
 
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .hero{
-    width: 100vw;
-    height: 100vh;
-    margin: 0px;
-    padding: 4rem 4rem;
-    position: relative;
-    z-index: 10;
-    background: linear-gradient(
-      105deg,
-      rgba(99, 102, 241, 0.2),
-      rgba(168, 85, 247, 0.2),
-      rgba(34, 211, 238, 0.2)
-    ),
-    #111827;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 4rem 4rem;
+  position: relative;
+  z-index: 10;
+  background: linear-gradient(
+    105deg,
+    rgba(99, 102, 241, 0.2),
+    rgba(168, 85, 247, 0.2),
+    rgba(34, 211, 238, 0.2)
+  ),
+  #111827;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .portrait {
@@ -56,6 +56,7 @@
   font-weight: 700;
   padding: 0px;
   margin: 0px;
+  font-size: 50px;
 }
 
 
@@ -65,6 +66,7 @@
   font-family: 'Montserrat' sans-serif;
   margin: 0px;
   padding-bottom: 10px;
+  font-size: 32px;
 }
 
 .tc{
@@ -124,7 +126,7 @@
   }
 }
 
-.content p{
+.hero .content p{
   color: white;
   font-family: 'Montserrat' sans-serif;
   font-size: 16px;
@@ -140,7 +142,7 @@
   gap: 1rem;
 }
 
-.buttons button{
+.hero .buttons button{
   height: 30px;
   width: 30px;
   border-radius: 8px;
@@ -151,7 +153,7 @@
   transition: 0.1s ease-in-out;
 }
 
-.buttons .downloadCV{
+.hero .buttons .downloadCV{
   width: auto;
   padding: 0px 2rem;
   height: 30px;
@@ -232,12 +234,269 @@
   background-color: white;
 }
 
-.buttons button:hover{
+.hero .buttons button:hover{
   background-color: #6366F1;
   color: white;
   box-shadow: 0px 0px 8px rgba(99, 101, 241, 0.462);
 }
 
-.Github:hover, .Linkedin:hover, .Twitter:hover, .backgC:hover{
+.hero .Github:hover, .hero .Linkedin:hover, .hero .Twitter:hover, .hero .backgC:hover{
   background-color: white;
+}
+
+
+@media screen and (max-width: 480px) {
+  .hero{
+    flex-direction: column-reverse;
+    padding: 4rem 1rem;
+    height: auto;
+  }
+
+  .hero .portrait{
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero .content{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero .name{
+    font-size: 26px;
+  }
+
+  .hero .titles .h2{
+    font-size: 20px;
+  }
+
+  .hero .titles .title{
+    font-size: 20px;
+  }
+
+  .hero .tc{
+    justify-content: center;
+  }
+
+  .hero .tC{
+    font-size: 20px;
+  }
+
+  .hero .content p{
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .hero .buttons{
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero .buttons button{
+    height: 25px;
+    width: 25px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+
+  .hero .buttons .downloadCV{
+    height: 25px;
+    padding: 0px 2rem;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+}
+
+
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .hero{
+    flex-direction: column-reverse;
+    padding: 4rem 2.5rem;
+    height: 100dvh;
+  }
+
+  .hero .portrait{
+    width: 400px;
+    height: 400px;
+  }
+
+  .hero .content{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero .name{
+    font-size: 26px;
+  }
+
+  .hero .titles .h2{
+    font-size: 20px;
+  }
+
+  .hero .titles .title{
+    font-size: 20px;
+  }
+
+  .hero .tc{
+    justify-content: center;
+  }
+
+  .hero .tC{
+    font-size: 20px;
+  }
+
+  .hero .content p{
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .hero .buttons{
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero .buttons button{
+    height: 25px;
+    width: 25px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+
+  .hero .buttons .downloadCV{
+    height: 25px;
+    padding: 0px 2rem;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .hero{
+    padding: 4rem 2.5rem;
+    height: 100dvh;
+  }
+
+  .hero .portrait{
+    width: 400px;
+    height: 400px;
+  }
+
+  .hero .content{
+    width: 45%;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .hero .name{
+    font-size: 28px;
+  }
+
+  .hero .titles .h2{
+    font-size: 20px;
+  }
+
+  .hero .titles .title{
+    font-size: 20px;
+  }
+
+  .hero .tc{
+    justify-content: start;
+  }
+
+  .hero .tC{
+    font-size: 20px;
+  }
+
+  .hero .content p{
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .hero .buttons{
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: start;
+  }
+
+  .hero .buttons button{
+    height: 30px;
+    width: 30px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+
+  .hero .buttons .downloadCV{
+    height: 30px;
+    padding: 0px 1.5rem;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1300px) {
+  .hero{
+    padding: 4rem 2.5rem;
+    height: 100dvh;
+  }
+
+  .hero .portrait{
+    width: 400px;
+    height: 400px;
+  }
+
+  .hero .content{
+    width: 45%;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .hero .name{
+    font-size: 38px;
+  }
+
+  .hero .titles .h2{
+    font-size: 28px;
+  }
+
+  .hero .titles .title{
+    font-size: 28px;
+  }
+
+  .hero .tc{
+    justify-content: start;
+  }
+
+  .hero .tC{
+    font-size: 28px;
+  }
+
+  .hero .content p{
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .hero .buttons{
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: start;
+  }
+
+  .hero .buttons button{
+    height: 30px;
+    width: 30px;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+
+  .hero .buttons .downloadCV{
+    height: 30px;
+    padding: 0px 1.5rem;
+    font-size: 14px;
+    border-radius: 6px;
+  }
 }

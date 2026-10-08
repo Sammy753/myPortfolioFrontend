@@ -38,13 +38,13 @@ export const XYLOPHONE = {
 
 export function applyResponsiveXylophoneConfig(containerWidth: number) {
   if (containerWidth < 480) {
-    XYLOPHONE.count = 64
+    XYLOPHONE.count = 74
     XYLOPHONE.radius = 1
     XYLOPHONE.group.scale = 0.3
     XYLOPHONE.group.rotXDeg = 25
     XYLOPHONE.group.rotZDeg = 30
   } else if (containerWidth >= 481 && containerWidth <= 768) {
-    XYLOPHONE.count = 64
+    XYLOPHONE.count = 74
     XYLOPHONE.radius = 1
     XYLOPHONE.group.scale = 0.35
     XYLOPHONE.group.rotXDeg = 25

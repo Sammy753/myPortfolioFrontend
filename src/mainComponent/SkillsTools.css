@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.SkillsTools{
+    width: 100dvw;
+    height: auto;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0px;
+    padding: 2rem 7rem;
+    position: relative;
+    z-index: 11;
+    gap: 2rem;
+}
+
+.SkillsToolsTitle{
+  width: 100%;
+}
+.SkillsToolsTitle h2{
+  color: #111827;
+  font-family: 'Montserrat' sans-serif;
+  font-size: clamp(20px, 2.5vw, 2.5rem);
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.SkillsToolsCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background: rgba(17, 24, 39, 0.5);
+  margin: 0;
+}
+
+.SkillsToolsCard {
+  width: 265px;
+  height: 220px;
+  border-radius: 8px;
+  padding: 16px;
+  flex: 1 1 265px;
+  /* margin-bottom: 1rem; */
+
+  background: linear-gradient(
+    105deg,
+    rgba(99, 102, 241, 0.6),
+    rgba(168, 85, 247, 0.6),
+    rgba(34, 211, 238, 0.6)
+  ),
+  rgba(17, 24, 39, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.SkillsToolsCard .icon {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.SkillsToolsCard .icon img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.SkillsToolsCard h3{
+    font-weight: 600;
+    font-size: clamp(16px, 1.5vw, 18px);
+    color: #DFE9FF;
+}
+
+.SkillsToolsCard p{
+  font-weight: 400;
+  font-size: clamp(12px, 1.2vw, 12px);
+  color: #DFE9FF;
+}
+
+
+@media screen and (max-width: 480px) {
+  .SkillsTools {
+    padding: 4rem 2rem;
+    height: auto;
+  }
+
+  .SkillsToolsCards {
+    gap: 1rem;
+  }
+
+  .SkillsToolsCard{
+    width: 100%;
+    height: 230px;
+    padding: 1rem;
+    flex: 0 0 100%;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 504px){
+  .SkillsTools {
+    height: auto;
+  }
+
+  .SkillsToolsCard{
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 790px) {
+  .SkillsTools {
+    padding: 4rem 3rem;
+    height: auto;
+  }
+
+  .SkillsToolsCards {
+    gap: 1rem;
+  }
+
+  .SkillsToolsCard{
+    width: 200px;
+    height: 240px;
+    padding: 1rem;
+    flex: 1 1 200px;
+    gap: 0.3rem;
+  }
+}
+
+@media screen and (min-width: 791px) and (max-width: 1024px) {
+  .SkillsTools {
+    padding: 4rem 4rem;
+    height: auto;
+  }
+
+  .SkillsToolsCard {
+    height: 220px;
+  }
+}

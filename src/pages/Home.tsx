@@ -59,10 +59,13 @@ function Home() {
         {
           opacity: 0,
           filter: "blur(0px)",
+          backgroundColor: "rgba(223, 233, 255, 0.0)",
+          zIndex: -1,
         },
         {
           opacity: 1,
           backdropFilter: "blur(5px)",
+          backgroundColor: "rgba(223, 233, 255, 0.1)",
           duration: 0.8,
           zIndex: 7,
           scrollTrigger: {
@@ -82,7 +85,7 @@ function Home() {
   return (
     <div className='homeContainer'>
       <div className="backgroundBlur"></div>
-      <div className='nav'><Navbar /></div>
+      <div className='nav'><Navbar isHome={true} /></div>
       <div className='XylophoneContainer'>
         <XylophoneCoil ref={coilRef} key={deviceKey} onReady={growCoil} background="transparent" autoScrollWithPage/>
       </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import './Landing.css'
 import gsap from 'gsap'
 import { useEffect, useRef, useState } from "react";
-// import { blur } from 'three/tsl';
+import { blur } from 'three/tsl';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 
@@ -65,7 +65,7 @@ function Landing() {
   }, []);
 
   useEffect(() => {
-    const split = SplitText.create("h1", {
+    const split = SplitText.create(".LC h1", {
       type: "chars",
     });
 
@@ -82,7 +82,7 @@ function Landing() {
         filter: "blur(0px)",
         duration: 1.4,
         delay: 1.7,
-        // stagger: 0.05,
+        stagger: 0.05,
         ease: "power3.inOut",
       }
     );
@@ -95,10 +95,11 @@ function Landing() {
     //   duration: 0.8,
     //   ease: "none",
     //   scrollTrigger: {
-    //     trigger: "h1",
+    //     trigger: ".Landing",
     //     start: "bottom 30%",
-    //     end: "bottom top",
-    //     scrub: true,
+    //     end: "bottom 0%",
+    //     // scrub: true,
+    //     toggleActions: "play none none reverse",
     //   },
     // });
 
@@ -163,32 +164,6 @@ function Landing() {
     };
   }, []);
 
-  // useEffect(() => {
-  //   const ctx = gsap.context(() => {
-  //     gsap.fromTo(
-  //       ".backgroundBlur",
-  //       {
-  //         opacity: 0,
-  //         backdropFilter: "blur(0px)",
-  //       },
-  //       {
-  //         opacity: 1,
-  //         backdropFilter: "blur(2px)",
-  //         duration: 0.2,
-  //         zIndex: 7,
-  //         scrollTrigger: {
-  //           trigger: ".homeContentContainer", // the section you want to trigger the blur
-  //           start: "top 80%",        // fires when the next section's top hits 80% down the viewport
-  //           toggleActions: "play none none reverse",
-  //           // or use scrub: true for a scroll-linked blur instead of a discrete toggle
-  //         },
-  //       }
-  //     );
-  //   });
-
-  //   return () => ctx.revert(); // cleanup on unmount
-  // }, []);
-
   return (
     <div className='Landing' id='landing'>
       <div className="AllArk">
@@ -198,9 +173,9 @@ function Landing() {
       </div>
       <div className='landingContent'>
         <div className='LC'>
-          <p className=' P text-[#72074B] text-[20px] tracking-[10%]'>UI Engineering</p>
+          <p className=' P text-[#72074B] tracking-[10%]'>UI Engineering</p>
           <h1>OLADELE SAMUEL</h1>
-          <p className=' P2 text-black text-[20px] tracking-[10%]'>Building Experience</p>
+          <p className=' P2 text-black tracking-[10%]'>Building Experience</p>
         </div>
       </div>
     </div>
