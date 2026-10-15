@@ -31,3 +31,7 @@ body{
     background-color: rgba(223, 233, 255, 0.1);
     position: fixed;
 }
+
+.portfolio .SeeMore{
+    display: none;
+}

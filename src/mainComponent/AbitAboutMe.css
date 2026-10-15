@@ -25,6 +25,7 @@
     font-size: clamp(24px, 3vw, 32px);
     font-weight: 700;
     color: #111827;
+    padding-bottom: 5px;
 }
 
 .AbitAboutMe .AboutMeContent p{
@@ -32,6 +33,7 @@
     font-weight: 400;
     color: black;
     text-align: justify;
+    padding-bottom: 7px;
 }
 
 .contentImage{

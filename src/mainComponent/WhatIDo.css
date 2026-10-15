@@ -1,48 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Monda:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .WhatIDoCards{
-    width: 100dvw;
-    height: 100dvh;
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    flex-direction: column;
-    gap: 2rem;
-    margin: 0px;
-    padding: 5rem 7rem;
-    position: relative;
-    z-index: 11;
-    gap: 2rem;
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0px;
+  padding: 5rem 7rem;
+  position: relative;
+  z-index: 11;
+  gap: 2rem;
 }
 
 .WhatIDos{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    gap: 1rem;
-    overflow-x: auto;
-    padding-bottom: 1rem;
-    scrollbar-width: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  width: 100%;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scrollbar-width: none;
 }
 
-hr {
+
+.WhatIDoCards hr {
   height: 1px;
   border: none;
   background: rgba(17, 24, 39, 0.5);
   margin: 0;
+  padding: 0;
 }
 
 .WhatIDoCard {
   width: 265px;
-  height: 220px;
   border-radius: 8px;
   padding: 10px;
   flex: 0 0 265px;
@@ -86,11 +87,11 @@ hr {
 .WhatIDoCard .icon {
   width: 62px;
   height: 62px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  object-fit: contain;
 }
 
 .WhatIDoCard .icon img {
@@ -101,14 +102,43 @@ hr {
 
 .content h3{
     font-weight: 600;
-    font-size: clamp(12px, 4vw, 18px);
+    font-size: clamp(14px, 4vw, 18px);
     color: #DFE9FF;
 }
 
+.WhatIDoCard .moreHeight{
+  width: 400px;
+}
+
+.next{
+  width: 40px;
+  height: 30px;
+  transition: 0.1s linear;
+}
+
+.next:hover{
+  filter: drop-shadow(0px 0px 2px rgba(17, 24, 39, 0.3));
+}
+
+.PageNextBack{
+  display: flex;
+  gap: 4px;
+}
+
+.WhatIDoCards .cardsTitle h2{
+  font-size: clamp(20px, 4vw, 32px);
+  padding: 0px;
+  margin: 0px;
+}
 
 @media screen and (max-width: 768px) {
+
+  .PageNextBack{
+    gap: 2px;
+  }
+  
   .WhatIDoCards {
-    padding: 5rem 2rem;
+    padding: 5rem 1rem;
   }
 
   .WhatIDos {
@@ -116,11 +146,11 @@ hr {
   }
 
   .WhatIDoCard {
-    width: 220px;
-    height: 180px;
+    width: 250px;
+    /* height: 280px; */
     border-radius: 8px;
     padding: 10px;
-    flex: 0 0 220px;
+    flex: 0 0 250px;
 
     background-size: cover;
     background-position: center;
@@ -156,6 +186,11 @@ hr {
     height: 25px;
   }
 
+  .next{
+    width: 30px;
+    height: 25px;
+  }
+
 }
 
 @media screen and (min-width: 481px) and (max-width: 999px) {
@@ -169,11 +204,10 @@ hr {
   }
 
   .WhatIDoCard {
-    width: 250px;
-    height: 180px;
+    width: 300px;
     border-radius: 8px;
     padding: 10px;
-    flex: 0 0 250px;
+    flex: 0 0 300px;
 
     background-size: cover;
     background-position: center;

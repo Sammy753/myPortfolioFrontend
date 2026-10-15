@@ -15,13 +15,22 @@ function Hero() {
     description: string;
   }
 
-const [whatIdo, setWhatIdo] = useState<WhatIDo[]>([]);
+  const [whatIdo, setWhatIdo] = useState<WhatIDo[]>([]);
 
-useEffect(() => {
-  fetch("https://myportfoliobackend-cuaw.onrender.com/api/what-i-do")
-    .then((res) => res.json())
-    .then(setWhatIdo);
-}, []);
+  useEffect(() => {
+    fetch("https://myportfoliobackend-cuaw.onrender.com/api/what-i-do")
+      .then((res) => res.json())
+      .then(setWhatIdo);
+  }, []);
+
+  function handleDownload() {
+    const link = document.createElement("a");
+    link.href = "/SMP_CodyPulse_CV.pdf"; // file inside /public
+    link.download = "SMP_CodyPulse_CV.pdf"; // name the user sees
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 
   return (
 
@@ -50,17 +59,17 @@ useEffect(() => {
           I create sophisticated digital experiences that seamlessly blend design, functionality, and strategy. Every project I touch is crafted with precision, clarity, and a focus on impactful, user-centered results.
         </p>
         <div className="buttons">
-          <button className="downloadCV">Download CV</button>
-          <button className="gitHub" onMouseEnter={() => setIsTrue(true)} onMouseLeave={() => setIsTrue(false)}>
+          <button className="downloadCV" onClick={handleDownload}>Download CV</button>
+          <button className="gitHub" onClick={() => window.open('https://github.com/Sammy753', "_blank", "noopener,noreferrer")} onMouseEnter={() => setIsTrue(true)} onMouseLeave={() => setIsTrue(false)}>
             <div className={isTrue ? "Github backgC" : "Github"}></div>
           </button>
-          <button className="linkedIN" onMouseEnter={() => setIsTrue1(true)} onMouseLeave={() => setIsTrue1(false)}>
+          <button className="linkedIN" onClick={() => window.open('https://www.linkedin.com/in/samuel-oladele-047ba4314/', "_blank", "noopener,noreferrer")} onMouseEnter={() => setIsTrue1(true)} onMouseLeave={() => setIsTrue1(false)}>
             <div className={isTrue1 ? "Linkedin backgCo" : "Linkedin"}></div>
           </button>
-          <button className="twitter" onMouseEnter={() => setIsTrue2(true)} onMouseLeave={() => setIsTrue2(false)}>
+          <button className="twitter" onClick={() => window.open('https://x.com/SMP_CodyPulse', "_blank", "noopener,noreferrer")} onMouseEnter={() => setIsTrue2(true)} onMouseLeave={() => setIsTrue2(false)}>
             <div className={isTrue2 ? "Twitter backgCt" : "Twitter"}></div>
           </button>
-          <button className="youtube" onMouseEnter={() => setIsTrue3(true)} onMouseLeave={() => setIsTrue3(false)}>
+          <button className="youtube" onClick={() => window.open('https://www.youtube.com/channel/UC2QpCFd8mA9hvQ943SUL0Dg', "_blank", "noopener,noreferrer")} onMouseEnter={() => setIsTrue3(true)} onMouseLeave={() => setIsTrue3(false)}>
             <div className={isTrue3 ? "Youtube backgCth" : "Youtube"}></div>
           </button>
         </div>

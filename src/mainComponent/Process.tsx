@@ -4,7 +4,7 @@ import './Process.css'
 function Process() {
   return (
     <div>
-      <div className='ProcessOverview'>
+      <div className='ProcessOverview' id='ProcessOverview'>
         <div className="contentP">
           <h2>Process Overview</h2>
           <p>

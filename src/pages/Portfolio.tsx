@@ -68,7 +68,7 @@ function Portfolio() {
     }, []);
 
   return (
-    <div>
+    <div className='portfolio'>
       <div className="backgroundBlur"></div>
       <div className='XylophoneContainer'>
         <XylophoneCoil ref={coilRef} key={deviceKey} onReady={growCoil} background="transparent" autoScrollWithPage/>

@@ -21,7 +21,7 @@ function SkillsTools() {
   }, []);
   
   return (
-    <div className='SkillsTools'>
+    <div className='SkillsTools' id='skills'>
       <div className="SkillsToolsTitle">
         <h2>Skills & Tools</h2>
         <hr />

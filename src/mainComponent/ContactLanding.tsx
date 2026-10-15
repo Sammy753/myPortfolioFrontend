@@ -7,11 +7,52 @@ import { XYLOPHONE } from '../components/XylophoneWidget/core/XylophoneConfig'
 import { XylophoneCoilHandle } from '../components/XylophoneWidget';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import XylophoneCoil from '../components/XylophoneWidget';
-import * as THREE from 'three'
 import { getCountries, getCountryCallingCode } from "libphonenumber-js";
+import CountryCodeInput from "./CountryCodeInput.tsx";
+import emailjs from "@emailjs/browser";
 
 
 function ContactLanding() {
+
+  const SocialMedia = [
+    {
+      name: "WhatsApp",
+      icon: "/mingcute_whatsapp-line.png",
+      link: "https://wa.me/2349158058282", // your number, digits only, with country code, no +
+    },
+    {
+      name: "Twitter",
+      icon: "/twitter.png",
+      link: "https://x.com/SMP_CodyPulse",
+    },
+    {
+      name: "Telegram",
+      icon: "/telegram.png",
+      link: "https://t.me/SMP_CodyPulse",
+    },
+    {
+      name: "Facebook",
+      icon: "/facebook.png",
+      link: "https://m.me/smp.codypulse",
+    },
+    {
+      name: "LinkedIn",
+      icon: "/linkedin.png",
+      link: "https://www.linkedin.com/in/samuel-oladele-047ba4314/",
+    },
+  ];
+
+  const [socialIndex, setSocialIndex] = useState(0);
+  const currentSocial = SocialMedia[socialIndex];
+
+  function handleChangeSocial() {
+    // the % brings it back to 0 after the last item
+    setSocialIndex((prev) => (prev + 1) % SocialMedia.length);
+  }
+
+  function handleOpenSocial() {
+    window.open(currentSocial.link, "_blank", "noopener,noreferrer");
+  }
 
   console.log("test")
 
@@ -51,19 +92,6 @@ function ContactLanding() {
   const [isTrue2, setIsTrue2] = useState(false);
   const [isTrue3, setIsTrue3] = useState(false);
   const [isTrue4, setIsTrue4] = useState(false);
-  const SocialMedia = ['Whatsapp', 'twitter', 'telegram', 'facebook', 'linkedIn']
-
-
-  const countries = getCountries();
-
-  countries.forEach(country => {
-    console.log(
-      country,
-      `+${getCountryCallingCode(country)}`
-    );
-  });
-
-  console.log('hhhh')
   
   return (
     <div className='ContactLanding'>
@@ -73,17 +101,17 @@ function ContactLanding() {
           Have a project, idea, or opportunity in mind? I’m open to collaborations, freelance work, and creative partnerships. Let’s connect and build meaningful, user-focused digital experiences together.
         </p>
         <div className="buttons">
-          <button className="HireMeBut">Hire me</button>
-          <button className="gitHub" onMouseEnter={() => setIsTrue(true)} onMouseLeave={() => setIsTrue(false)}>
+          <button className="HireMeBut" onClick={() => setIsTrue4(true)}>Hire me</button>
+          <button className="gitHub" onClick={() => window.open('https://github.com/Sammy753', "_blank", "noopener,noreferrer")} onMouseEnter={() => setIsTrue(true)} onMouseLeave={() => setIsTrue(false)}>
             <div className={isTrue ? "Github backgC" : "Github"}></div>
           </button>
-          <button className="linkedIN" onMouseEnter={() => setIsTrue1(true)} onMouseLeave={() => setIsTrue1(false)}>
+          <button className="linkedIN" onClick={() => window.open('https://www.linkedin.com/in/samuel-oladele-047ba4314/', "_blank", "noopener,noreferrer")} onMouseEnter={() => setIsTrue1(true)} onMouseLeave={() => setIsTrue1(false)}>
             <div className={isTrue1 ? "Linkedin backgCo" : "Linkedin"}></div>
           </button>
-          <button className="twitter" onMouseEnter={() => setIsTrue2(true)} onMouseLeave={() => setIsTrue2(false)}>
+          <button className="twitter" onClick={() => window.open('https://x.com/SMP_CodyPulse', "_blank", "noopener,noreferrer")} onMouseEnter={() => setIsTrue2(true)} onMouseLeave={() => setIsTrue2(false)}>
             <div className={isTrue2 ? "Twitter backgCt" : "Twitter"}></div>
           </button>
-          <button className="youtube" onMouseEnter={() => setIsTrue3(true)} onMouseLeave={() => setIsTrue3(false)}>
+          <button className="youtube" onClick={() => window.open('https://www.youtube.com/channel/UC2QpCFd8mA9hvQ943SUL0Dg', "_blank", "noopener,noreferrer")} onMouseEnter={() => setIsTrue3(true)} onMouseLeave={() => setIsTrue3(false)}>
             <div className={isTrue3 ? "Youtube backgCth" : "Youtube"}></div>
           </button>
         </div>
@@ -110,27 +138,21 @@ function ContactLanding() {
                 <p>Via Email</p>
               </div>
               <div className="socialMediaButton">
-                <div className='socialmediaButton'>
-                  <img src="/mingcute_whatsapp-line.png" alt="" />
-                  <p>Via WhatsApp</p>
+                <div className="socialmediaButton" onClick={handleOpenSocial}>
+                  <img src={currentSocial.icon} alt={currentSocial.name} />
+                  <p>Via {currentSocial.name}</p>
                 </div>
-                <div className="shareIcon"><img src="/ic_baseline-change-circle.png" alt="" /></div>
+
+                <div className="changeIcon" onClick={handleChangeSocial}>
+                  <img src="/ic_baseline-change-circle.png" alt="Change social media" />
+                </div>
               </div>
             </div>
             <hr />
           </div>
-          <input type="text" className="Name" placeholder='Enter your name'/>
-          <input type="email" className="Email" placeholder='Enter your email'/>
-          <div className="NumberCode">
-            <input type="" placeholder=''className='Code'/>
-            <input type="tel" name="phone" placeholder='Enter your phone number' className='Number'/>
+          <div className="dataInput">
+            <CountryCodeInput />
           </div>
-          <textarea name="Message" placeholder='Send your message' className="Message"/>
-          <button className='send' onClick={() => {
-            console.log("I'm here");
-            console.warn("Warning test");
-            console.error("Error test");
-          }}>Send</button>
         </div>
       </div>
 

@@ -4,7 +4,7 @@ import './AbitAboutMe.css'
 function AbitAboutMe() {
   return (
     <div>
-      <div className='AbitAboutMe'>
+      <div className='AbitAboutMe' id='introduction'>
         <div className="AboutMeContent">
           <h2>A Bit About Me</h2>
           <p>
@@ -16,9 +16,6 @@ function AbitAboutMe() {
         </div>
         <div className='contentImage'>
           <img src="NativeDress copy2.jpg" className='contentImagE' alt="" />
-          <div className="Icon">
-            <img src="iconamoon.png" className='iconView' alt="" />
-          </div>
         </div>
       </div>
     </div>

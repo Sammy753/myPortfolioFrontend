@@ -19,15 +19,15 @@ function ProjectCards() {
 
   const [ProjectDetails, setProjectDetails] = useState<ProjectDetails[]>([])
 
-  // useEffect(() => {
-  //   fetch("https://myportfoliobackend-cuaw.onrender.com/api/project")
-  //     .then((res) => res.json())
-  //     .then(setProjectDetails);
-  // }, []);
+  useEffect(() => {
+    fetch("https://myportfoliobackend-cuaw.onrender.com/api/project")
+      .then((res) => res.json())
+      .then(setProjectDetails);
+  }, []);
 
 
   return (
-    <div className='ProductCards'>
+    <div className='ProductCards' id='work'>
       <div className="cardsTitle">
         <h2>Curated Works</h2>
         <hr />
@@ -47,7 +47,7 @@ function ProjectCards() {
           </div>
         </div>
       </div>
-      <button>See More?</button>
+      <a href='/portfolio'><button className='SeeMore'>See more</button></a>
     </div>
   )
 }

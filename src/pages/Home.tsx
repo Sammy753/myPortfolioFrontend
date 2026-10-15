@@ -91,8 +91,8 @@ function Home() {
       </div>
       <Landing />
       <div className="heroSection"><Hero /></div>
-      <div className="curatedWorks"><ProjectCards /></div>
-      <div className="subscribeSection"><Subcribe /></div>
+      <div className="curatedWorks" id='recent-posts'><ProjectCards /></div>
+      <div className="subscribeSection" id='subscribe'><Subcribe /></div>
       <div className="footer"><Footer /></div>
     </div>
   )

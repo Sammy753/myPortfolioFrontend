@@ -23,7 +23,8 @@
     background: linear-gradient(
         180deg,
         rgba(17, 24, 39, 0),
-        rgba(17, 24, 39, 0.9)
+        rgba(17, 24, 39, 0.7),
+        rgba(17, 24, 39, 1)
     ),
     #11182700;
     gap: 2rem;
