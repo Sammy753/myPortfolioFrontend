@@ -32,6 +32,13 @@ body{
   color: white;
   padding: 0.7rem 2rem;
   border-radius: 30px;
+  y: -50;
+  opacity: 0;
+  filter: "blur(1px)";
+  position: "relative";
+  backdrop-filter: "blur(0px)";
+  box-shadow: "inset 0 0 3px rgba(223, 233, 255, 0)";
+  border: "1px solid rgba(223, 233, 255, 0)";
 }
 
 .hiddenNav {
@@ -154,6 +161,13 @@ body{
     border-radius: 30px;
     margin: 0.5rem 0rem;
     z-index: 111;
+    y: -50;
+    opacity: 0;
+    filter: "blur(1px)";
+    position: "relative";
+    backdrop-filter: "blur(0px)";
+    box-shadow: "inset 0 0 3px rgba(223, 233, 255, 0)";
+    border: "1px solid rgba(223, 233, 255, 0)";
   }
 
   

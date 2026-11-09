@@ -54,20 +54,14 @@ function Home() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(
+      gsap.from(
         ".backgroundBlur",
         {
           opacity: 0,
           filter: "blur(0px)",
           backgroundColor: "rgba(223, 233, 255, 0.0)",
           zIndex: -1,
-        },
-        {
-          opacity: 1,
-          backdropFilter: "blur(5px)",
-          backgroundColor: "rgba(223, 233, 255, 0.1)",
           duration: 0.8,
-          zIndex: 7,
           scrollTrigger: {
             trigger: ".heroSection", // the section you want to trigger the blur
             start: "top 80%",        // fires when the next section's top hits 80% down the viewport

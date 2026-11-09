@@ -32,7 +32,6 @@ function WhatIDo() {
   
     return (
       <div className='WhatIDoCards' id='Servicelist'>
-        <Lenis />
         <div className="cardsTitle">
           <div className='flex justify-between items-center'>
             <h2>What I Do</h2>

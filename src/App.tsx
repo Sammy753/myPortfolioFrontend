@@ -16,7 +16,7 @@ function App() {
       <div className='box'></div>
       <div className="PageContainer">
         <SmoothScroll />
-        <ScrollToHash />
+        {/* <ScrollToHash /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />

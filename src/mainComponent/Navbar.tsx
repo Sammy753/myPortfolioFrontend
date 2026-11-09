@@ -36,17 +36,8 @@ function Navbar({ isHome }: NavbarProps) {
 
     // Navbar style
     if (isHome) {
-      gsap.fromTo(
+      gsap.to(
       ".navbar, .navbarMobile",
-      {
-        y: -20,
-        opacity: 0,
-        filter: "blur(1px)",
-        position: "relative",
-        backdropFilter: "blur(0px)",
-        boxShadow: "inset 0 0 3px rgba(223, 233, 255, 0)",
-        border: "1px solid rgba(223, 233, 255, 0)",
-      },
       {
         y: 0,
         opacity: 1,
@@ -229,7 +220,7 @@ function Navbar({ isHome }: NavbarProps) {
   return (
     <>
       <div className='Navbar'>
-        <nav className='navbar relative flex justify-between gap-6 items-center' >
+        <nav className='navbar relative flex justify-between items-center' >
           
           <Link to="/" className='LogoContainer flex items-start justify-center gap-1'>
             <div className='LogoNav'>

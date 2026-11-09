@@ -20,6 +20,10 @@ body,
   padding: 0;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .box {
   background:
     linear-gradient(
@@ -39,4 +43,8 @@ body,
 .PageContainer{
   position: relative;
   z-index: 1;
+}
+
+#nl-badge, .nl-badge{
+  display: none;
 }

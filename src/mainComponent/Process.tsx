@@ -15,7 +15,7 @@ function Process() {
           </p>
         </div>
         <div className='componentCont'>
-          <video src="/Overview.mp4" autoPlay muted loop playsInline />
+          <video src="https://res.cloudinary.com/vuri18mk/video/upload/v1792038068/portfolioVideo.mp4" autoPlay muted loop playsInline />
         </div>
       </div>
     </div>

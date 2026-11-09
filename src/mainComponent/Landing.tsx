@@ -1,185 +1,127 @@
-import React from 'react'
-import './Landing.css'
-import gsap from 'gsap'
-import { useEffect, useRef, useState } from "react";
-import { blur } from 'three/tsl';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import React, { useLayoutEffect, useRef } from "react";
+import "./Landing.css";
+
+import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 
-
+gsap.registerPlugin(SplitText);
 
 function Landing() {
+  const landingRef = useRef<HTMLDivElement>(null);
 
-  gsap.registerPlugin(SplitText);
-  gsap.registerPlugin(ScrollTrigger);
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const title = landingRef.current?.querySelector(".LC h1");
+      const subtitle = landingRef.current?.querySelector(".P");
+      const description = landingRef.current?.querySelector(".P2");
 
-  useEffect(() => {
-    gsap.fromTo(
-      ".arc",
-      {
-        "--arc-padding": "0px",
-        opacity: 0,
-        filter: "blur(0px)"
-      },
-      {
-        delay: 0.8,
-        "--arc-padding": "10px",
-        duration: 0.8,
-        ease: "power3.inOut",
-        opacity: 1,
-        filter: "blur(4px)"
-      }
-    );
+      if (!title || !subtitle || !description) return;
 
-    gsap.fromTo(
-      ".arc2",
-      {
-        "--arc-padding": "0px",
-        opacity: 0,
-        filter: "blur(0px)"
-      },
-      {
-        delay: 0.8,
-        "--arc-padding": "10px",
-        duration: 0.8,
-        ease: "power3.inOut",
-        opacity: 1,
-        filter: "blur(0.5px)"
-      }
-    );
+      // Split text into individual characters
+      const titleSplit = SplitText.create(title, {
+        type: "chars",
+      });
 
-    gsap.fromTo(
-      ".landingContent",
-      {
-        width: "80%",
-        right: "10%",
-      },
-      {
-        // width: "51%",
-        duration: 0.8,
-        delay: 1.7,
-        // right: "24.5%"
-      }
-    );
+      const subtitleSplit = SplitText.create(subtitle, {
+        type: "chars",
+      });
 
-  }, []);
+      const descriptionSplit = SplitText.create(description, {
+        type: "chars",
+      });
 
-  useEffect(() => {
-    const split = SplitText.create(".LC h1", {
-      type: "chars",
-    });
+      // Main landing animation timeline
+      const tl = gsap.timeline({
+        defaults: {
+          ease: "power3.out",
+        },
+      });
 
-    gsap.fromTo(
-      split.chars,
-      {
-        letterSpacing: "1.9rem",
-        opacity: 0,
-        filter: "blur(0.75px)",
-      },
-      {
-        letterSpacing: "0rem",
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 1.4,
-        delay: 1.7,
-        stagger: 0.05,
-        ease: "power3.inOut",
-      }
-    );
+      // Arc reveal
+      tl.from(".arc", {
+        autoAlpha: 0,
+        scaleY: 0.9,
+        duration: 1,
+        transformOrigin: "center bottom",
+      }, 0);
 
-    // Scroll-out animation
-    // gsap.to(split.chars, {
-    //   letterSpacing: "1.9rem",
-    //   opacity: 0,
-    //   filter: "blur(0.75px)",
-    //   duration: 0.8,
-    //   ease: "none",
-    //   scrollTrigger: {
-    //     trigger: ".Landing",
-    //     start: "bottom 30%",
-    //     end: "bottom 0%",
-    //     // scrub: true,
-    //     toggleActions: "play none none reverse",
-    //   },
-    // });
+      tl.from(".arc2", {
+        autoAlpha: 0,
+        scaleY: 0.9,
+        duration: 1,
+        transformOrigin: "center bottom",
+        stagger: 0.12,
+      }, 0.2);
 
-    return () => {
-      split.revert();
-    };
-  }, []);
-
-  useEffect(() => {
-    const split = SplitText.create(".P2", {
-      type: "chars",
-    });
-
-    gsap.fromTo(
-      split.chars,
-      {
+      // Landing content reveal
+      tl.from(".landingContent", {
+        autoAlpha: 0,
         y: 30,
-        opacity: 0,
-        filter: "blur(0.75px)",
-      },
-      {
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
         duration: 0.8,
-        delay: 1.9,
-        stagger: 0.05,
-        ease: "power3.inOut",
-      }
-    );
+      }, 0.7);
 
-    return () => {
-      split.revert();
-    };
-  }, []);
+      // Main heading
+      tl.from(titleSplit.chars, {
+        autoAlpha: 0,
+        y: 35,
+        duration: 1,
+        stagger: 0.035,
+        ease: "power3.out",
+      }, 1);
 
-  useEffect(() => {
-    const split = SplitText.create(".P", {
-      type: "chars",
-    });
+      // First paragraph
+      tl.from(subtitleSplit.chars, {
+        autoAlpha: 0,
+        y: -15,
+        duration: 0.6,
+        stagger: 0.025,
+      }, 1.5);
 
-    gsap.fromTo(
-      split.chars,
-      {
-        y: -30,
-        opacity: 0,
-        filter: "blur(8px)",
-      },
-      {
-        y: 0,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 0.8,
-        delay: 1.9,
-        stagger: 0.05,
-        ease: "power3.inOut",
-      }
-    );
+      // Second paragraph
+      tl.from(descriptionSplit.chars, {
+        autoAlpha: 0,
+        y: 20,
+        duration: 0.7,
+        stagger: 0.025,
+      }, 1.6);
 
-    return () => {
-      split.revert();
-    };
+      // Cleanup SplitText instances
+      return () => {
+        titleSplit.revert();
+        subtitleSplit.revert();
+        descriptionSplit.revert();
+      };
+
+    }, landingRef);
+
+    return () => ctx.revert();
+
   }, []);
 
   return (
-    <div className='Landing' id='landing'>
+    <div className="Landing" id="landing" ref={landingRef}>
       <div className="AllArk">
         <div className="arc"></div>
         <div className="arc2"></div>
         <div className="arc2"></div>
       </div>
-      <div className='landingContent'>
-        <div className='LC'>
-          <p className=' P text-[#72074B] tracking-[10%]'>UI Engineering</p>
+
+      <div className="landingContent">
+        <div className="LC">
+          <p className="P text-[#72074B] tracking-[10%]">
+            UI Engineering
+          </p>
+
           <h1>OLADELE SAMUEL</h1>
-          <p className=' P2 text-black tracking-[10%]'>Building Experience</p>
+
+          <p className="P2 text-black tracking-[10%]">
+            Building Experience
+          </p>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Landing
+export default Landing;

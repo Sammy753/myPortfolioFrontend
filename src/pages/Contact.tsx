@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../mainComponent/Navbar';
 import ContactLanding from '../mainComponent/ContactLanding';
+import "./About.css"
 
 function Contact() {
   return (

@@ -1,6 +1,7 @@
 import React from 'react'
 import './Hero.css'
 import { useEffect, useState } from 'react'
+import { useMediaQuery } from '../components/XylophoneWidget/core/useMediaQuery'
 
 function Hero() {
 
@@ -8,6 +9,15 @@ function Hero() {
   const [isTrue1, setIsTrue1] = useState(false);
   const [isTrue2, setIsTrue2] = useState(false);
   const [isTrue3, setIsTrue3] = useState(false);
+  const [MediaQ, setMediaQ] = useState(false);
+
+  
+  const isMobile = useMediaQuery('(max-heigth: 768px)')
+  // if (isMobile){
+  //   setMediaQ(true)
+  // }else{
+  //   setMediaQ(false)
+  // }
 
   interface WhatIDo {
     id: number;
@@ -75,7 +85,7 @@ function Hero() {
         </div>
       </div>
       <div className="portrait">
-        <img src="/Big Sam.png" alt="portrait" />
+        <img src="https://res.cloudinary.com/vuri18mk/image/upload/v1792096723/Big_Sam.png" alt="portrait" />
         
         <svg className="ring" viewBox="0 0 400 400">
           <circle

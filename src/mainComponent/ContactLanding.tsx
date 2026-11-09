@@ -7,9 +7,9 @@ import { XYLOPHONE } from '../components/XylophoneWidget/core/XylophoneConfig'
 import { XylophoneCoilHandle } from '../components/XylophoneWidget';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import XylophoneCoil from '../components/XylophoneWidget';
-import { getCountries, getCountryCallingCode } from "libphonenumber-js";
+// import { getCountries, getCountryCallingCode } from "libphonenumber-js";
 import CountryCodeInput from "./CountryCodeInput.tsx";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 
 
 function ContactLanding() {

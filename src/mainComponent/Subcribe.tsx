@@ -57,7 +57,7 @@ function Subcribe() {
     <div className="Subcribe">
       <div className="subBanner">
         <div className="image">
-          <img src="./sammy logo copy2.jpg" alt="Subscription Banner" className="subImage" />
+          <img src="https://res.cloudinary.com/vuri18mk/image/upload/v1792098144/sammy_logo_copy2.jpg" alt="Subscription Banner" className="subImage" />
         </div>
         <div className="subContent">
           <div className="icon">

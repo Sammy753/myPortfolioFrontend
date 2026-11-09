@@ -15,7 +15,7 @@ function AbitAboutMe() {
           </p>
         </div>
         <div className='contentImage'>
-          <img src="NativeDress copy2.jpg" className='contentImagE' alt="" />
+          <img src="https://res.cloudinary.com/vuri18mk/image/upload/v1792037800/NativeDress_copy2.jpg" className='contentImagE' alt="" />
         </div>
       </div>
     </div>

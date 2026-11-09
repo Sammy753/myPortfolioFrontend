@@ -56,19 +56,15 @@ function Service() {
           },
           {
             opacity: 1,
+            delay: 0.8,
             backdropFilter: "blur(5px)",
-            duration: 0.8,
+            duration: 1.2,
             zIndex: 7,
-            scrollTrigger: {
-              trigger: ".heroSection", // the section you want to trigger the blur
-              start: "top 80%",        // fires when the next section's top hits 80% down the viewport
-              toggleActions: "play none none reverse",
-              // or use scrub: true for a scroll-linked blur instead of a discrete toggle
-            },
+            ease: "power3.inOut",
           }
         );
       });
-  
+
       return () => ctx.revert(); // cleanup on unmount
     }, []);
 

@@ -12,7 +12,7 @@ body{
 }
 
 .Landing{
-    width: 100vmax;
+    width: 100dvw;
     height: 100vh;
     position: relative;
 }
@@ -75,7 +75,7 @@ body{
     height: 80vh;
     position: absolute;
     filter: blur(0.5px);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(2px);
     z-index: 2;
     background-color: rgba(0, 0, 255, 0);
     border-radius: 700px 700px 0% 0%;
@@ -110,6 +110,11 @@ body{
     mask: linear-gradient(90deg, transparent 0%, black 100%);
     pointer-events: none;
     z-index: 2;
+}
+
+.arc,
+.arc2 {
+    transform-origin: center bottom;
 }
 
 
