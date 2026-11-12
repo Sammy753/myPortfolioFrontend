@@ -34,6 +34,8 @@ export interface XylophoneWidgetOptions {
   captureScroll?: boolean
   /** Drive the conveyor from the page's own scroll instead of hover+wheel. Default false. */
   autoScrollWithPage?: boolean
+  /** From useMediaQuery. When set, it decides the layout instead of the measured container width. */
+  device?: 'mobile' | 'tablet' | 'laptop' | 'desktop'
   /**
    * Controls the panel behind the bars. Default: the original's purple gradient (`'#a391d3'`).
    * - Any CSS color string: recolors the gradient's base tone.
@@ -161,7 +163,7 @@ export class XylophoneWidget {
     this.options = options
 
     const rect = container.getBoundingClientRect()
-    applyResponsiveXylophoneConfig(rect.width)   // add this line
+    applyResponsiveXylophoneConfig(rect.width, options.device)   // add this line
 
     Properties.reset()
 

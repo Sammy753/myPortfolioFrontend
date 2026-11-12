@@ -13,10 +13,11 @@ import './Portfolio.css'
 
 function Portfolio() {
 
-   const isMobile = useMediaQuery('(max-width: 480px)')
-    const isTablet = useMediaQuery('(min-width: 481px) and (max-width: 1024px)')
-    const isDesktop = useMediaQuery('(min-width: 1025px)')
-    const deviceKey = isMobile ? 'mobile' : isTablet ? 'tablet' : isDesktop ? 'desktop' : 'unknown'
+     const isMobile = useMediaQuery('(max-width: 480px)')
+     const isTablet = useMediaQuery('(min-width: 481px) and (max-width: 768px)')
+     const isLaptop = useMediaQuery('(min-width: 769px) and (max-width: 1024px)')
+     const isDesktop = useMediaQuery('(min-width: 1025px)')
+     const deviceKey = isMobile ? 'mobile' : isTablet ? 'tablet' : isLaptop ? 'laptop' : isDesktop ? 'desktop' : 'desktop'
   
     const coilRef = useRef<XylophoneCoilHandle>(null)
   
@@ -71,7 +72,7 @@ function Portfolio() {
     <div className='portfolio'>
       <div className="backgroundBlur"></div>
       <div className='XylophoneContainer'>
-        <XylophoneCoil ref={coilRef} key={deviceKey} onReady={growCoil} background="transparent" autoScrollWithPage/>
+       <XylophoneCoil ref={coilRef} key={deviceKey} device={deviceKey} onReady={growCoil} background="transparent" autoScrollWithPage/>
       </div>
       <Navbar isHome={false} />
       <ProjectCards />

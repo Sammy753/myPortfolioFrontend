@@ -36,20 +36,21 @@ export const XYLOPHONE = {
   scroll: { sensitivity: 0.05, lerp: 1 },
 } // no `as const`
 
-export function applyResponsiveXylophoneConfig(containerWidth: number) {
-  if (containerWidth < 480) {
+export function applyResponsiveXylophoneConfig(containerWidth: number,
+  device?: 'mobile' | 'tablet' | 'laptop' | 'desktop') {
+  if (device === 'mobile') {
     XYLOPHONE.count = 74
     XYLOPHONE.radius = 1
     XYLOPHONE.group.scale = 0.3
     XYLOPHONE.group.rotXDeg = 25
     XYLOPHONE.group.rotZDeg = 30
-  } else if (containerWidth >= 481 && containerWidth <= 768) {
+  } else if (device === 'tablet') {
     XYLOPHONE.count = 74
     XYLOPHONE.radius = 1
     XYLOPHONE.group.scale = 0.35
     XYLOPHONE.group.rotXDeg = 25
     XYLOPHONE.group.rotZDeg = 60
-  } else if (containerWidth >= 769 && containerWidth <= 1024) {
+  } else if (device === 'laptop') {
     XYLOPHONE.count = 64
     XYLOPHONE.radius = 1
     XYLOPHONE.group.scale = 0.4

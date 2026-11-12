@@ -57,9 +57,10 @@ function ContactLanding() {
   console.log("test")
 
   const isMobile = useMediaQuery('(max-width: 480px)')
-  const isTablet = useMediaQuery('(min-width: 481px) and (max-width: 1024px)')
-  const isDesktop = useMediaQuery('(min-width: 1025px)')
-  const deviceKey = isMobile ? 'mobile' : isTablet ? 'tablet' : isDesktop ? 'desktop' : 'unknown'
+  const isTablet = useMediaQuery('(min-width: 481px) and (max-width: 768px)')
+  // const isLaptop = useMediaQuery('(min-width: 769px) and (max-width: 1024px)')
+  // const isDesktop = useMediaQuery('(min-width: 1025px)')
+  const deviceKey = isMobile ? 'mobile' : isTablet ? 'tablet' : 'mobile' // default to tablet for now, since laptop and desktop are not defined
 
   const coilRef = useRef<XylophoneCoilHandle>(null)
 
@@ -118,7 +119,7 @@ function ContactLanding() {
         <button className='SeeMore' onClick={() => setIsTrue4(true)}>See More?</button>
       </div>
       <div className="model3D">
-        <XylophoneCoil ref={coilRef} key={deviceKey} onReady={growCoil} background="transparent" autoScrollWithPage/>
+        <XylophoneCoil ref={coilRef} key={deviceKey} device={deviceKey} onReady={growCoil} background="transparent" autoScrollWithPage/>
       </div>
       
       <div className={ isTrue4 ? "PopPopUp " : "PopPopUp hidden"} >

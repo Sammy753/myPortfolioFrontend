@@ -20,10 +20,11 @@ import Footer from '../mainComponent/Footer';
 
 function Home() {
 
-  const isMobile = useMediaQuery('(max-width: 480px)')
-  const isTablet = useMediaQuery('(min-width: 481px) and (max-width: 1024px)')
-  const isDesktop = useMediaQuery('(min-width: 1025px)')
-  const deviceKey = isMobile ? 'mobile' : isTablet ? 'tablet' : isDesktop ? 'desktop' : 'unknown'
+    const isMobile = useMediaQuery('(max-width: 480px)')
+    const isTablet = useMediaQuery('(min-width: 481px) and (max-width: 768px)')
+    const isLaptop = useMediaQuery('(min-width: 769px) and (max-width: 1024px)')
+    const isDesktop = useMediaQuery('(min-width: 1025px)')
+    const deviceKey = isMobile ? 'mobile' : isTablet ? 'tablet' : isLaptop ? 'laptop' : isDesktop ? 'desktop' : 'desktop'
 
   const coilRef = useRef<XylophoneCoilHandle>(null)
 
@@ -81,7 +82,7 @@ function Home() {
       <div className="backgroundBlur"></div>
       <div className='nav'><Navbar isHome={true} /></div>
       <div className='XylophoneContainer'>
-        <XylophoneCoil ref={coilRef} key={deviceKey} onReady={growCoil} background="transparent" autoScrollWithPage/>
+        <XylophoneCoil ref={coilRef} key={deviceKey} device={deviceKey} onReady={growCoil} background="transparent" autoScrollWithPage/>
       </div>
       <Landing />
       <div className="heroSection"><Hero /></div>
