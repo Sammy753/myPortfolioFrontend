@@ -40,6 +40,7 @@ function Landing() {
 
       // Arc reveal
       tl.from(".arc", {
+        opacity: 0,
         autoAlpha: 0,
         scaleY: 0.9,
         duration: 1,
@@ -47,12 +48,13 @@ function Landing() {
       }, 0);
 
       tl.from(".arc2", {
+        opacity: 0,
         autoAlpha: 0,
         scaleY: 0.9,
         duration: 1,
         transformOrigin: "center bottom",
-        stagger: 0.12,
-      }, 0.2);
+        // stagger: 0.12,
+      }, 0);
 
       // Landing content reveal
       tl.from(".landingContent", {

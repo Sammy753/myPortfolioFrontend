@@ -52,7 +52,7 @@ function Hero() {
           <div className='tc'>
             <h2 className='tC'>:</h2>
 
-            {whatIdo.map((p, index) => (
+            {/* {whatIdo.map((p, index) => (
               <div key={p.id}>
                 <span
                   className="title"
@@ -62,7 +62,21 @@ function Hero() {
                   {p.title}
                 </span>
               </div>
-            ))}
+            ))} */}
+
+            <div className="titleStack">
+              {whatIdo.map((p, index) => (
+                <div key={p.id}>
+                  <span
+                    className="title"
+                    style={{ "--i": index } as React.CSSProperties}
+                    data-text={p.title}
+                  >
+                    {p.title}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <p>
@@ -87,14 +101,15 @@ function Hero() {
       <div className="portrait">
         <img src="https://res.cloudinary.com/vuri18mk/image/upload/v1792096723/Big_Sam.png" alt="portrait" />
         
-        <svg className="ring" viewBox="0 0 400 400">
+        <svg className="portraitOrbit" viewBox="0 0 400 400">
           <circle
-            cx="200" cy="200" r="190"
+            cx="200" cy="200" r="186"
             fill="none"
-            stroke="#6366f1"
-            stroke-width="4"
-            stroke-dasharray="480 100"
-            stroke-linecap="round"
+            stroke="rgba(99, 101, 241, 0.6)"
+            strokeWidth="3"
+            pathLength="100"
+            strokeDasharray="30 20"
+            strokeLinecap="round"
           />
         </svg>
       </div>

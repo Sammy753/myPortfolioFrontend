@@ -36,6 +36,7 @@ body{
     z-index: 1;
     background-color: rgba(0, 0, 255, 0);
     border-radius: 700px 700px 0% 0%;
+    opacity: 1;
 }
 
 .arc::before{
@@ -79,6 +80,7 @@ body{
     z-index: 2;
     background-color: rgba(0, 0, 255, 0);
     border-radius: 700px 700px 0% 0%;
+    opacity: 1;
 }
 
 .arc2::before{
